@@ -1,9 +1,6 @@
 package com.omar.springframework.sfgdi;
 
-import com.omar.springframework.sfgdi.controllers.ConstructorInjectedController;
-import com.omar.springframework.sfgdi.controllers.MyController;
-import com.omar.springframework.sfgdi.controllers.PropertyInjectedController;
-import com.omar.springframework.sfgdi.controllers.SetterInjectedController;
+import com.omar.springframework.sfgdi.controllers.*;
 import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +14,10 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext applicationContext = SpringApplication.run(SfgDiApplication.class, args);
+
+		I18nController i18nController = applicationContext.getBean("i18nController", I18nController.class);
+
+		System.out.println(i18nController.sayHello());
 
 		MyController myController = applicationContext.getBean("myController", MyController.class);
 
