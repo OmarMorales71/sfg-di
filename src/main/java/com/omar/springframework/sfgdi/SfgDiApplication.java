@@ -2,6 +2,7 @@ package com.omar.springframework.sfgdi;
 
 import com.omar.springframework.sfgdi.controllers.*;
 import com.omar.springframework.sfgdi.examplebeans.FakeDataSource;
+import com.omar.springframework.sfgdi.examplebeans.FakeDataSource2;
 import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import org.springframework.boot.SpringApplication;
@@ -47,6 +48,14 @@ public class SfgDiApplication {
         System.out.println(fakeDataSource.getPassword());
 
         System.out.println(fakeDataSource.getUrl());
+
+        FakeDataSource2 fakeDataSource2 = applicationContext.getBean("fakeDataSource2", FakeDataSource2.class);
+
+        System.out.println(fakeDataSource2.getUser());
+
+        System.out.println(fakeDataSource2.getPassword());
+
+        System.out.println(fakeDataSource2.getUrl());
     }
 
 }
