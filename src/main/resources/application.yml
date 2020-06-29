@@ -1,0 +1,9 @@
+com:
+  omar:
+    username: OmarMcCartney
+    password: pass
+    ddbbUrl: omar.com
+  omar2:
+    username: ValeriaChida
+    password: 123456789
+    ddbbUrl: chidisima.com

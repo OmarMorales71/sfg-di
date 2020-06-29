@@ -14,14 +14,12 @@ import org.springframework.core.env.Environment;
 @Configuration
 //classpath del archivo donde estan nuestras nuevas propiedades
 //@PropertySource({"classpath:datasource.properties", "classpath:datasource2.properties"})
-@PropertySources({//Multiple property files
+/*@PropertySources({//Multiple property files
         @PropertySource({"classpath:datasource.properties"}),
         @PropertySource({"classpath:datasource2.properties"})
-})
+})*/
 public class PropertyConfig {
 
-    @Autowired
-    Environment env;
 
     @Value("${com.omar.username}")//se asigna el valor de la propiedad com.omar.username
     String user;
@@ -44,7 +42,7 @@ public class PropertyConfig {
     @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUser(env.getProperty("USERNAME"));//Obtener una propiedad o variable de entorno del sistema operativo
+        fakeDataSource.setUser(user);//fakeDataSource.setUser(env.getProperty("USERNAME"));//Obtener una propiedad o variable de entorno del sistema operativo
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
         return fakeDataSource;
@@ -59,10 +57,10 @@ public class PropertyConfig {
         return fakeDataSource2;
     }
 
-    @Bean
+    /*@Bean
     //Este bean se utiliza para scanear y leer  las propiedades del archivo properties indicado arriba
     public static PropertySourcesPlaceholderConfigurer properties() {
         return new PropertySourcesPlaceholderConfigurer();
 
-    }
+    }*/
 }

@@ -1,0 +1,17 @@
+# this is a comment
+
+name: Omar
+
+names:
+  -John
+  -Paul
+  -Ringo
+  -George
+
+pound_sign: "#"
+
+book:
+  author: Joe Buck
+  publisher: Random
+
+truth: yes #boolean (yes, true, True) - (no, No, false, FALSE)
